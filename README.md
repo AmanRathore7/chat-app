@@ -1,6 +1,6 @@
 
 
-## Running the backend app
+## Run the backend app
 $ npm run start:dev
 Default port is 3000
 
@@ -14,21 +14,34 @@ $ npm install
 
 Step 2:
 #Install nest cli:
-command: $ npm i -g @nestjs/cli
+```bash
+$ npm i -g @nestjs/cli
+```
 
 Step 3:
 #Create nest project
-command: $ nest new project-name
+```bash
+$ nest new project-name
+```
 
 Step 4:
 #Install socket package
-command: $ npm i --save @nestjs/websockets @nestjs/platform-socket.io
-command: $ npm i --save socket.io
+```bash
+$ npm i --save @nestjs/websockets @nestjs/platform-socket.io
+```
+```bash
+$ npm i --save socket.io
+```
 
 Step 5:
 #Generate service gateway and module gateway
-command: nest generate service  gateway --no-spec
-command: nest generate module gateway
+```bash
+nest generate service  gateway --no-spec
+```
+
+```bash
+nest generate module gateway
+```
 
 Step 6:
 #Enable CORS in WebSocketGateway (goto gateway.service.ts)
@@ -39,7 +52,9 @@ Step 7:
 
 Step 8:
 #Enabling Cache
-command: npm install --save @nestjs/websockets cache-manager cache-manager-redis-store
+```bash
+npm install --save @nestjs/websockets cache-manager cache-manager-redis-store
+```
 
 Step 9:
 NestJS application's main module (app.module.ts), configure Redis as a caching provider.
@@ -79,6 +94,11 @@ constructor(private cacheManager: Cache) {}
   }
 
 
+## Run frontend
+
+Install server : npm install -g http-server
+Run Command: http-server -p 4000
+
 
 ## Implementation the frontend app
 
@@ -98,7 +118,4 @@ socketIo.on("message", function(data) {
 # Send message 
 socketIo.emit("message", text);
 
-## Run frontend
 
-Install server : npm install -g http-server
-Run Command: http-server -p 4000
